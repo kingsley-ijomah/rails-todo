@@ -40,6 +40,12 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice: 'Successfully marked as done'
   end
 
+  def archive
+    @task = Task.find(params[:id])
+    @task.update_column(:status, params[:status])
+    redirect_to tasks_path, notice: 'Successfully archived task'
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy

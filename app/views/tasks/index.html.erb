@@ -20,6 +20,7 @@
   <% @done.each do |done| %>
     <p>
       <%= done.name %>
+      <%= link_to 'archive', archive_task_path(done, status: Task.statuses[:archived]), 'data-test': 'archive-task-link', method: :put %>
     </p>
   <% end %>
 </div>
