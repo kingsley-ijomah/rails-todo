@@ -1,0 +1,5 @@
+<% %w(notice alert).each do |type| %>
+  <% if flash[type] %>
+    <div data-test="flash-<%= type %>"><%= flash[type] %></div>
+  <% end %>
+<% end %>

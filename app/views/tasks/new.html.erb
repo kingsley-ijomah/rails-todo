@@ -1,1 +1,6 @@
 <h3>new task</h3>
+
+<%= form_for @task do |f| %>
+  <p><%= f.text_field :name, placeholder: 'enter task' %></p>
+  <p><%= f.submit 'save task' %></p>
+<% end %>
