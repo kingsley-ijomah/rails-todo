@@ -12,7 +12,8 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path, notice: 'Successfully created task'
     else
-
+      flash[:alert] = 'There was a problem saving task'
+      render 'new'
     end
   end
 

@@ -18,7 +18,14 @@ RSpec.feature "Tasks::Creates", type: :feature do
     end
 
     scenario 'invalid task' do 
+      expect {
+        fill_in :task_name, with: ''
 
+        click_button 'save task'
+      }.to change(Task, :count).by(0)
+
+      expect(page).to have_xpath(dt('flash-alert'))
+      expect(page).to have_xpath(dt('validation-errors'))
     end
   end
 end
