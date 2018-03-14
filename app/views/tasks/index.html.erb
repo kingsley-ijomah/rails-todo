@@ -1,1 +1,21 @@
 <h3>tasks</h3>
+
+<p><%= link_to 'new task', new_task_path, 'data-test': 'new-task-link' %></p>
+
+<div data-test='todo-items'>
+  <% @todos.each do |todo| %>
+    <p>
+      <%= todo.name %>
+    </p>
+  <% end %>
+</div>
+
+<hr>
+
+<div data-test='done-items'>
+  <% @done.each do |done| %>
+    <p>
+      <%= done.name %>
+    </p>
+  <% end %>
+</div>

@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
   def index
+    @todos = Task.where(status: :todo)
+    @done = Task.where(status: :done)
   end
   
   def new
