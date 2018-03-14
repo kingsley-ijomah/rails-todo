@@ -9,6 +9,7 @@
       <%= link_to 'done', done_task_path(todo, status: Task.statuses[:done]),
       'data-test': 'done-task-link', method: :put %>
       <%= link_to 'edit', edit_task_path(todo), 'data-test': 'edit-task-link' %>
+      <%= link_to 'delete', task_path(todo), 'data-test': 'delete-task-link', method: :delete %>
     </p>
   <% end %>
 </div>
