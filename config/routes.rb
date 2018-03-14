@@ -3,4 +3,6 @@ Rails.application.routes.draw do
     put 'done', on: :member
     put 'archive', on: :member
   end
+
+  resources :archives, only: [:index, :destroy]
 end

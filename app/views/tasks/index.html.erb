@@ -1,6 +1,9 @@
 <h3>tasks</h3>
 
-<p><%= link_to 'new task', new_task_path, 'data-test': 'new-task-link' %></p>
+<p>
+  <%= link_to 'new task', new_task_path, 'data-test': 'new-task-link' %>
+  <%= link_to 'archives', archives_path, 'data-test': 'archives-link' %>  
+</p>
 
 <div data-test='todo-items'>
   <% @todos.each do |todo| %>
