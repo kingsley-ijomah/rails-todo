@@ -19,6 +19,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def done
+    @task = Task.find(params[:id])
+    @task.update_column(:status, params[:status])
+    redirect_to tasks_path, notice: 'Successfully marked as done'
+  end
+
   private
 
   def strong_params

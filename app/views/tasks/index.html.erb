@@ -6,6 +6,8 @@
   <% @todos.each do |todo| %>
     <p>
       <%= todo.name %>
+      <%= link_to 'done', done_task_path(todo, status: Task.statuses[:done]),
+      'data-test': 'done-task-link', method: :put %>
     </p>
   <% end %>
 </div>
