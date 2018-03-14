@@ -1,0 +1,6 @@
+<%= render partial: 'shared/validation_errors', locals: {object: @task} %>
+
+<%= form_for @task do |f| %>
+  <p><%= f.text_field :name, placeholder: 'enter task' %></p>
+  <p><%= f.submit 'save task' %></p>
+<% end %>

@@ -19,6 +19,21 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if @task.update(strong_params)
+      redirect_to tasks_path, notice: 'Successfully updated task'
+    else
+      flash[:alert] = 'There was a problem updating task'
+      render 'edit'
+    end
+  end
+
   def done
     @task = Task.find(params[:id])
     @task.update_column(:status, params[:status])
