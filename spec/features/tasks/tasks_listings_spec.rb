@@ -36,6 +36,7 @@ RSpec.feature "Tasks::Listings", type: :feature do
           expect(page).to have_content("done learn to code")
           expect(page).to_not have_content("archived to learn code")
           expect(page).to_not have_content("todo learn to code")
+          expect(page).to have_xpath("//del")
         end
       end
     end

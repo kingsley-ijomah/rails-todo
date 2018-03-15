@@ -1,10 +1,5 @@
 <h3>tasks</h3>
 
-<p>
-  <%= link_to 'new task', new_task_path, 'data-test': 'new-task-link' %>
-  <%= link_to 'archives', archives_path, 'data-test': 'archives-link' %>  
-</p>
-
 <div data-test='todo-items'>
   <% @todos.each do |todo| %>
     <p>
@@ -22,7 +17,7 @@
 <div data-test='done-items'>
   <% @done.each do |done| %>
     <p>
-      <%= done.name %>
+      <del><%= done.name %></del>
       <%= link_to 'archive', archive_task_path(done, status: Task.statuses[:archived]), 'data-test': 'archive-task-link', method: :put %>
     </p>
   <% end %>
